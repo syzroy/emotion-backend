@@ -1,0 +1,15 @@
+flask
+numpy
+pandas
+flask_cors
+flask-socketio
+sqlalchemy
+pymysql
+gevent
+gevent-websocket
+pillow
+tensorflow
+celery
+redis
+requests
+matplotlib
