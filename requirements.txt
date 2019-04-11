@@ -9,7 +9,7 @@ gevent
 gevent-websocket
 pillow
 tensorflow
+keras
 celery
 redis
 requests
-matplotlib
