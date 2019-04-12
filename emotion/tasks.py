@@ -30,7 +30,7 @@ def predict_frame(image_base64, file_id):
     with open(file_path, 'wb') as f:
         f.write(base64.b64decode(data))
 
-    openface = "/home/roy/Downloads/backend/OpenFace/FaceLandmarkImg"
+    openface = "OpenFace/FaceLandmarkImg"
     command = openface + ' -f ' + file_path + ' -out_dir ' + out_path
     os.system(command)
     csv_path = out_path + file_id + '.csv'
@@ -46,12 +46,13 @@ def predict_frame(image_base64, file_id):
     img = image.load_img(out_path + file_id + '_aligned/' +
                          'face_det_000000.bmp',
                          target_size=(IMG_SIZE, IMG_SIZE))
-    conn = requests.post('https://73589a8f.ngrok.io/',
+    conn = requests.post(SERVICE_URL,
                          data=pickle.dumps(img),
                          headers={'Content-Type': 'application/octet-stream'})
     if conn.ok:
         data = conn.json()
         au.append(data['result'][0])
+        print(data['result'][0])
         au.append(emotions)
     else:
         print(conn.content)
@@ -112,7 +113,7 @@ def process_video(path):
         # start input pipline for prediction
         img = image.load_img(frame_path, target_size=(IMG_SIZE, IMG_SIZE))
         conn = requests.post(
-            'https://73589a8f.ngrok.io/',
+            SERVICE_URL,
             data=pickle.dumps(img),
             headers={'Content-Type': 'application/octet-stream'})
 

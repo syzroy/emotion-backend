@@ -16,6 +16,8 @@ DATABASE_URI = 'mysql+pymysql://ys51:!Zc2g9GRmy83Hm@klovia.cs.st-andrews.ac.uk/y
 STATIC_FOLDER = 'static/'
 # The size of preprocessing for images
 IMG_SIZE = 100
+# URL for the prediction server
+SERVICE_URL = 'https://117dd24b.ngrok.io'
 
 # Video formats accepted
 ALLOWED_EXTENSIONS = {'mp4', 'mov'}
@@ -33,4 +35,8 @@ classification_units = [
     'Lip corner puller', 'Dimpler', 'Lip corner depressor', 'Chin raiser',
     'Lip stretcher', 'Lip tightener', 'Lips part', 'Jaw drop', 'Lip suck',
     'Blink'
+]
+
+emotions = [
+    'angry', 'calm', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise'
 ]

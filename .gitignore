@@ -7,3 +7,4 @@ redis-stable/
 static/
 venv/
 video-uploads/
+.DS_Store
