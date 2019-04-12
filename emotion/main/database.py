@@ -31,9 +31,9 @@ frame_analysis = db.Table(
     db.Column('calm', db.Text(), nullable=False),
     db.Column('disgust', db.Text(), nullable=False),
     db.Column('fear', db.Text(), nullable=False),
-    db.Column('sad', db.Text(), nullable=False),
     db.Column('happy', db.Text(), nullable=False),
     db.Column('neutral', db.Text(), nullable=False),
+    db.Column('sad', db.Text(), nullable=False),
     db.Column('surprise', db.Text(), nullable=False),
 )
 

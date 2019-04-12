@@ -28,6 +28,7 @@ ERROR_NO_UPLOADED_FILE = 4001
 VIDEO_TYPE_NOT_SUPPORTED = 4002
 NO_VIDEO_ID = 4003
 INVALID_VIDEO_ID = 4004
+NO_FRAME_NO = 4005
 
 classification_units = [
     'Inner brow raiser', 'Outer brow raiser', 'Brow lower', 'Upper lid raiser',

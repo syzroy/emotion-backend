@@ -103,3 +103,25 @@ def read_file(name):
 def serve_static(file_id, name):
     return send_from_directory(
         '/home/roy/Downloads/backend/static/' + file_id + '/', name)
+
+
+# return emotion analysis results
+@blueprint.route('/emotion')
+def get_emotion():
+    video_id = request.args.get('id')
+    if not video_id:
+        return jsonify(Error(NO_VIDEO_ID, 'No given video id').__dict__)
+    frame_no = request.args.get('frame')
+    if not frame_no:
+        return jsonify(Error(NO_FRAME_NO, 'No given frame number').__dict__)
+
+    connection = engine.connect()
+    query = db.select([frame_analysis]).where(
+        db.and_(frame_analysis.columns.video_id == video_id,
+                frame_analysis.columns.frame_path == frame_no))
+    result_proxy = connection.execute(query)
+    results = result_proxy.fetchall()
+    if len(results) == 0:
+        return jsonify(Error(NO_FRAME_NO, 'Frame Number Incorrect').__dict__)
+
+    return jsonify({'data': list(results[0])[4:], 'labels': emotions})
