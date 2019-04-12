@@ -121,6 +121,7 @@ def get_emotion():
                 frame_analysis.columns.frame_path == frame_no))
     result_proxy = connection.execute(query)
     results = result_proxy.fetchall()
+    connection.close()
     if len(results) == 0:
         return jsonify(Error(NO_FRAME_NO, 'Frame Number Incorrect').__dict__)
 
