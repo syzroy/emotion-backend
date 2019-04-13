@@ -39,5 +39,5 @@ classification_units = [
 ]
 
 emotions = [
-    'angry', 'calm', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise'
+    "angry", "calm", "disgust", "fear", "sad", "happy", "neutral", "surprise"
 ]

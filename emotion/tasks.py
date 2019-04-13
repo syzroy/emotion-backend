@@ -127,9 +127,9 @@ def process_video(path):
             'calm': data['result'][0][1],
             'disgust': data['result'][0][2],
             'fear': data['result'][0][3],
-            'happy': data['result'][0][4],
-            'neutral': data['result'][0][5],
-            'sad': data['result'][0][6],
+            'sad': data['result'][0][4],
+            'happy': data['result'][0][5],
+            'neutral': data['result'][0][6],
             'surprise': data['result'][0][7]
         })
 
