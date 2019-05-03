@@ -17,7 +17,7 @@ STATIC_FOLDER = 'static/'
 # The size of preprocessing for images
 IMG_SIZE = 100
 # URL for the prediction server
-SERVICE_URL = 'https://2f46e00e.ngrok.io'
+SERVICE_URL = 'https://22a1e095.ngrok.io'
 
 # Video formats accepted
 ALLOWED_EXTENSIONS = {'mp4', 'mov'}

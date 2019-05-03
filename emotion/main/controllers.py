@@ -1,6 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 import sys
-sys.path.append('/home/roy/Downloads/backend/')
+sys.path.append('/Users/macpro/emotion-backend/')
 from flask import request, jsonify, send_from_directory
 import sqlalchemy as db
 import pandas as pd
@@ -90,7 +90,7 @@ def get_data():
 # read csv file content
 @blueprint.route('/static/<name>', methods=['GET'])
 def read_file(name):
-    path = '/home/roy/Downloads/backend/static/' + name
+    path = '/Users/macpro/emotion-backend/static/' + name
     df = pd.read_csv(path)
     au = []
     for _, row in df.iterrows():
@@ -102,7 +102,7 @@ def read_file(name):
 @blueprint.route('/static/<file_id>/<name>', methods=['GET'])
 def serve_static(file_id, name):
     return send_from_directory(
-        '/home/roy/Downloads/backend/static/' + file_id + '/', name)
+        '/Users/macpro/emotion-backend/static/' + file_id + '/', name)
 
 
 # return emotion analysis results

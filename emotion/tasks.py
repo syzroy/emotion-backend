@@ -52,7 +52,6 @@ def predict_frame(image_base64, file_id):
     if conn.ok:
         data = conn.json()
         au.append(data['result'][0])
-        print(data['result'][0])
         au.append(emotions)
     else:
         print(conn.content)
